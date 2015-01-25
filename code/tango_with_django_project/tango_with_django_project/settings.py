@@ -73,6 +73,12 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
+TEMPLATE_DIRS = [
+    TEMPLATE_PATH,
+]
+
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
