@@ -9,6 +9,8 @@
 <body>
   <h1>Rango says...</h1>
   hello world! <strong>{{ boldmessage }}</strong><br />
+  <br />
+  Most Popular
   {% if categories %}
   <ul>
     {% for category in categories %}
@@ -18,6 +20,19 @@
   {% else %}
   <strong>There are no categories present.</strong>
   {% endif %}
+  <br />
+  Most Viewed Pages
+  <br />
+  {% if pages %}
+  <u>
+	{% for page in pages %}
+    <li><a href="{{page.url}}">{{page.title}}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <strong>There are no pages present.</strong>
+  {% endif %}
+  <br />
   <a href="/rango/about/">About</a><br />
   <img src="{% static "images/Rango.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
 </body>
