@@ -74,6 +74,7 @@ TEMPLATES = [
 ]
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+LOGIN_URL = '/rango/login/'
 
 TEMPLATE_DIRS = [
     TEMPLATE_PATH,

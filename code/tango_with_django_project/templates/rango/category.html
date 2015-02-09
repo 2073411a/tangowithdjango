@@ -12,6 +12,9 @@
     {% for page in pages %}
     <li><a href="{{ page.url }}">{{ page.title }}</a></li>
     {% endfor %}
+    {% if user.is_authenticated %}
+    <li><a href="/rango/category/{{ category.slug }}/add_page/">Add Page</a></li>
+    {% endif %}
   </ul>
   {% else %}
   <strong>No pages currently in category.</strong>
