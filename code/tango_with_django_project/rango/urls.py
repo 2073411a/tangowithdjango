@@ -10,6 +10,8 @@ urlpatterns = patterns('',url(r'^$',views.index,name='index'),
                        url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.category, name='category'),
                        url(r'^restricted/', views.restricted, name='restricted'),
                        url(r'^goto/', views.track_url, name='goto'),
+                       url(r'^add_profile/', views.register_profile, name='register_profile'),
+                       url(r'^profile/', views.profile, name='profile'),
                        )
 
 if not settings.DEBUG:

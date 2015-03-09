@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}PROFILE{% endblock %}
+{% block body_block %}
+{{ user.username }}
+
+{{ user.website }}
+
+{{ user.picture }}
+
+{% endblock %}

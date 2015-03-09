@@ -1,8 +1,7 @@
 from django.contrib.auth import logout
 from django.shortcuts import render
 from django.http import HttpResponse
-from rango.models import Page
-from rango.models import Category
+from rango.models import *
 from rango.forms import CategoryForm
 from rango.forms import PageForm
 from rango.forms import UserForm, UserProfileForm
@@ -143,3 +142,27 @@ def some_view(request):
 	    return HttpResponse("You are logged in.")
 	else:
 	    return HttpResponse("You are not logged in.")
+
+@login_required
+def profile(request):
+    return render(request, 'rango/profile.html', {})
+
+@login_required
+def register_profile(request):
+    form = None
+    if request.method == 'POST':
+        profile = UserProfile.objects.get(user = request.user)
+        form = UserProfileForm(request.POST)
+        if form.is_valid():
+            form.save(commit = False)
+            try:
+                profile.picture = request.FILES['picture']
+            except:
+                pass
+            profile.save
+            return index(request)
+        else:
+		    print form.errors
+    else:
+        form = UserProfileForm()
+    return render(request, 'rango/profile_registration.html',{'form':form})
