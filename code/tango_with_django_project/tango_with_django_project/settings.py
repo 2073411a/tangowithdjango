@@ -27,7 +27,7 @@ DEBUG = True
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DEBUG =  [TEMPLATE_PATH]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['2073411a.pythonanywhere.com']
 
 
 # Application definition

@@ -13,6 +13,7 @@ urlpatterns = patterns('',
         #Add in this url pattern to override the default pattern in accounts.
     url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
     (r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^$',include('rango.urls')),
 )
 
 if settings.DEBUG:
